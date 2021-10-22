@@ -17,12 +17,15 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"></link>
 {% endblock %} 
 
+
+
 {%block content%}
+
 
 
 <section id="all-posts">
         <h2>سجّل للقاح فايروس كورونا</h2>
-        <form>
+        {% comment %} <form > {% endcomment %}
             <div class="form-group">
                 <label for="name">الاسم ثلاثي</label>
                 <input type="text" class="form-control" id="name">
@@ -68,8 +71,15 @@
                 <label for="exampleFormControlTextarea1">أي ملاحظات أخرى</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button class="button-31" role="button"> <a href="{% url 'register' %}"> سجّل للقاح فايروس كورونا </a></button>
-        </form>
+            <button onClick="writeNewPost()" class="button-31" role="button">سجّل للقاح فايروس كورونا</button>
+        {% comment %} </form> {% endcomment %}
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="{% static "news/register-form.js" %}"></script>
+    <script>
+        function submit() {
+            console.log("Submitted")
+        }
+        
+    </script>
 {%endblock%}
