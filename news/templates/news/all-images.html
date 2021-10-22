@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block title%}
+    ألبوم صور
+{%endblock%}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "news/post.css" %}">
+<link rel="stylesheet" href="{% static "news/all-posts.css" %}">
+{% endblock %}
+
+{%block content%}
+    <section id="all-posts">
+        <h2>ألبوم الصور</h2>
+        <ul>
+            {%for post in all_images%}
+                {% include "news/includes/image.html" %}  
+            {%endfor%}
+        </ul>
+    </section>
+{%endblock%}

@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3.9",
+    "python.languageServer": "Pylance",
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "emmet.includeLanguages": {"django-html": "html"}
+}

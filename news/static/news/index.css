@@ -1,0 +1,169 @@
+* {
+    font-family: Cairo !important;
+    direction: rtl !important;
+}
+
+.logo-animate {
+    -webkit-animation: newspaper 4s ease 0s 1 normal;
+    -moz-animation: newspaper 4s ease 0s 1 normal;
+    -ms-animation: newspaper 4s ease 0s 1 normal;
+    animation: newspaper 4s ease 0s 1 normal;
+}
+
+@-webkit-keyframes newspaper {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3) rotate(720deg);
+        transform: scale3d(0.3, 0.3, 0.3) rotate(720deg);
+    }
+    30% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1) rotate(15deg);
+        transform: scale3d(1, 1, 1) rotate(15deg);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1) rotate(15deg);
+        transform: scale3d(1, 1, 1) rotate(15deg);
+    }
+}
+
+@keyframes newspaper {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3) rotate(720deg);
+    }
+    30% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1) rotate(15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1) rotate(15deg);
+    }
+}
+
+.logo-animate:hover {
+    -webkit-animation: rotate 1s ease 0s 1 normal;
+    -moz-animation: rotate 1s ease 0s 1 normal;
+    -ms-animation: rotate 1s ease 0s 1 normal;
+    animation: rotate 1s ease 0s 1 normal;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#welcome {
+    /* background: linear-gradient(to right top, #810202, #dd0505); */
+    background: rgb(18, 117, 198);
+    background: linear-gradient(90deg, rgba(18, 117, 198, 1) 0%, rgba(107, 173, 95, 1) 74%, rgba(48, 162, 185, 1) 100%);
+    padding: 6rem 12%;
+    text-align: left;
+}
+
+#welcome header {
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem auto;
+}
+
+#welcome img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    transform: rotateZ(-5deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#welcome h2 {
+    font-size: 3.5rem;
+    margin: 0 0 0 12rem;
+    color: #e4e4e4;
+    width: 56em;
+    text-align: center;
+}
+
+#welcome p {
+    color: white;
+    font-size: 1.5rem;
+    padding-left: 10em;
+    /* padding-bottom: 2em; */
+}
+
+#whats-covid {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 55%;
+    margin: 0 auto;
+    /* box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4); */
+}
+
+#transmision {
+    background-color: #F1F1F1;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#transmision img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+#latest-posts {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+#latest-posts h2 {
+    text-align: center;
+}
+
+#latest-posts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+#latest-posts li {
+    flex: 1;
+}
+
+#about {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f7f7f7;
+    margin-top: 5rem;
+}
+
+#about h2 {
+    font-size: 3rem;
+}
+
+#about p {
+    font-size: 1.5rem;
+    color: #353535;
+}

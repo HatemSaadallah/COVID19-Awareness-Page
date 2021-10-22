@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{%static "app.css"%}">
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"></link>
+
+    {%block css_files%}{% endblock %}
+</head>
+<body>
+    <header id="main-navigation">
+        <h1><a href="{% url 'starting-page' %}">الصفحة الرئيسية</a></h1>
+        <nav>
+            <a href="http://site.iugaza.edu.ps/covid19/">الجامعة الإسلامية - غزة</a>
+            <br>
+            <a href="{% url 'images' %}">ألبوم صور</a>
+        </nav>
+    </header>
+
+    {%block content%}
+    {%endblock%}
+</body>
+</html>

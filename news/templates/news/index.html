@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {%block title%} الجامعة الإسلامية - غزة {%endblock%} {% block css_files %}
+<link rel="stylesheet" href="{% static "news/post.css" %}">
+<link rel="stylesheet" href="{% static "news/index.css" %}">
+<link rel="stylesheet" href="{% static "news/button.css" %}">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"></link>
+{% endblock %} {%block content%}
+
+<script>0</script>
+<section id="welcome">
+    <header>
+        <img class="logo-animate" src="{% static 'news/images/logo.jpg' %}" alt="Al-Jazzera">
+
+        <h2>الجامعة الإسلامية - تطعيم فايروس كورونا</h2>
+
+    </header>
+    <p>مرحبا بكم في الصفحة التعريفية عن كوفيد- 19 </p>
+    <div>
+        <button class="button-31" role="button"> <a href="{% url 'register' %}"> سجّل للقاح فايروس كورونا </a></button>
+    <div>
+</section>
+<section id="whats-covid">
+    <h2>ﻣﺎ ﻫﻮ فيروس ﻛﻮروﻧﺎ المستجد؟</h2>
+    <p>
+        يتحدث الجميع عن مرض فيروس كورونا 2019 (كوفيد-19)، وأينما تنظر تجد معلومات حول الفيروس وكيفية حماية نفسك منه. معرفة الحقائق ضرورية جداً لتكون مستعداً على نحو ملائم لحماية نفسك وأحبائك. لكن، وللأسف، ثمة معلومات كثيرة غير صحيحة. ويؤدي انتشار المعلومات المُضلِلة
+        أثناء الأزمات الصحية إلى جعل الناس غير محميين ومعرضين للإصابة بالمرض وانتشار الخوف والوصم بينهم.
+        <br /> <br /> تأكّد من حصولك على الحقائق من مصادر موثوقة، من قبيل اليونيسف ومنظمة الصحة العالمية. وتعمل اليونيسف مع خبراء صحيين دوليين على مدار الساعة لتوفير معلومات دقيقة. ويجب أن تكون المعلومات التي تثق فيها مستندة إلى أحدث الأدلة العلمية. وسنواصل
+        توفير آخر التحديثات والشروحات للأهالي والمعلمين، وتوفير موارد لوسائل الإعلام عند ظهور معلومات جديدة، لذا يجدر بك العودة إلى زيارة هذا الموقع بصفة منتظمة لتظل على اطلاع على أفضل السبل لحماية نفسك وأسرتك.
+        <br /> <br /> نرجو أن تساعدنا في مكافحة المعلومات المُضلِلة حول كوفيد-19. شاطِر هذه المعلومات مع أسرتك وأصدقائك وزملائك للمساعدة في التحقق من حصول الناس على الحقائق حول كوفيد-19 وليتمكنوا من حماية صحتهم.
+        <br /> <br />
+    </p>
+</section>
+
+<section id="transmision">
+    <img src="{% static 'news/images/protect.jpg' %}" />
+</section>
+
+<section id="latest-posts">
+    <h2>آخر المستجدات</h2>
+    <ul>
+        {%for post in posts%} {% include "news/includes/post.html" %} {%endfor%}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>عنّا </h2>
+    <p>هذه صفحة تعريفية عن فايروس كورونا</p>
+    <p> الهدف هو تطعيم جميع طلاب الجامعة خلال الفصل الأول من السنة الدراسية 2021/2022</p>
+    <h6>مصطفى البواب</h6>
+</section>
+{%endblock%}
