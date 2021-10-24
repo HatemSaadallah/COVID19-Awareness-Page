@@ -25,54 +25,46 @@
 
 <section id="all-posts">
         <h2>سجّل للقاح فايروس كورونا</h2>
-        {% comment %} <form > {% endcomment %}
+        <form method="POST" action="/register">
+            {% csrf_token %}
+            
+
+            
             <div class="form-group">
                 <label for="name">الاسم ثلاثي</label>
-                <input type="text" class="form-control" id="name">
+                {{ form.personName }}
+            </div>
+            <div class="form-group">
+                <label for="phone">العمر</label>
+                {{ form.age }}
             </div>
             <div class="form-group">
                 <label for="phone">رقم الهاتف</label>
-                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="">
+                {{ form.phone }}
             </div>
             <div class="form-group">
                 <label for="email">البريد الالكتروني</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                {{ form.email }}
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">نوع اللقاح المطلوب</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                <option>موديرنا</option>
-                <option>فايزر</option>
-                <option>سبوتنيك</option>
-                <option>سبوتنيك لايت</option>
-                {% comment %} <option>5</option> {% endcomment %}
-                </select>
+                {{ form.typeVaccine }}
             </div>
             <div class="row">
                 <legend class="col-form-label col-sm-2 pt-0">هل أصبت بفايروس كورونا سابقا؟</legend>
                 <div class="col-sm-10 options">
-                    <div class="form-check">
-                    <label class="form-check-label" for="gridRadios1">
-                        نعم
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                    
-                    </div>
-                    <div class="form-check">
-                    <label class="form-check-label" for="gridRadios2">
-                        لا
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                    
+                    {{ form.sickBefore }}
                 </div>
             </div>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">أي ملاحظات أخرى</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                {{ form.notes }}
             </div>
-            <button onClick="writeNewPost()" class="button-31" role="button">سجّل للقاح فايروس كورونا</button>
-        {% comment %} </form> {% endcomment %}
+
+
+            <button class="button-31" role="button">سجّل للقاح فايروس كورونا</button>
+        </form>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="module" src="{% static "news/register-form.js" %}"></script>

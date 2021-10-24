@@ -29,3 +29,30 @@ class Post(models.Model):
     content = models.TextField(validators=[MinLengthValidator])
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True ,related_name="posts")
     tags = models.ManyToManyField(Tag)
+
+class registerForVaccine(models.Model):
+    name = models.CharField(max_length=255);
+    
+class Person(models.Model):
+    personName = models.CharField(max_length=255)
+    age = models.IntegerField(default=0)
+    TYPES_OF_VACCINE = (
+        ('1', 'فايزر'),
+        ('2', 'سبوتنيك'),
+        ('3', 'سبوتنيك لايت'),
+        ('4', 'موديرنا'),
+    )
+    typeVaccine = models.CharField(max_length=1, choices=TYPES_OF_VACCINE)
+    phone = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    TYPES_OF_SICK = (
+        ('a', 'نعم'),
+        ('b', 'لا'),
+    )
+    sickBefore = models.CharField(max_length=1, choices=TYPES_OF_SICK)
+    notes = models.TextField()
+
+    
+# class Admin(models.Model):
+#     username = models.CharField(max_length=255)
+#     password = models.CharField(max_length=255)

@@ -18,6 +18,13 @@
             <a href="http://site.iugaza.edu.ps/covid19/">الجامعة الإسلامية - غزة</a>
             <br>
             <a href="{% url 'images' %}">ألبوم صور</a>
+            {% if not user.is_authenticated %}
+                <br>
+                <a href="{% url 'login' %}">تسجيل الدخول</a>
+            {% else %}
+                <br>
+                <a href="{% url 'logout' %}">تسجيل الخروج</a>
+            {% endif %}
         </nav>
     </header>
 
