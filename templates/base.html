@@ -15,7 +15,11 @@
     <header id="main-navigation">
         <h1><a href="{% url 'starting-page' %}">الصفحة الرئيسية</a></h1>
         <nav>
-            <a href="http://site.iugaza.edu.ps/covid19/">الجامعة الإسلامية - غزة</a>
+            {% if not user.is_authenticated %}
+                <a href="http://site.iugaza.edu.ps/covid19/">الجامعة الإسلامية - غزة</a>
+            {% else %}
+                <a href="{% url 'data' %}">عرض المسجلين</a>
+            {% endif %}
             <br>
             <a href="{% url 'images' %}">ألبوم صور</a>
             {% if not user.is_authenticated %}

@@ -9,5 +9,6 @@ urlpatterns = [
     path("images", views.AllImages.as_view(), name="images"),
     path("login", views.Login, name="login"),
     path("logout", views.Logout, name="logout"),
+    path("data", views.Data, name="data"),
     path("news/<slug:slug>", views.SingleNewView.as_view(), name="news-detail-page")
 ]

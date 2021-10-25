@@ -1,0 +1,69 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{%block title%} سجل لتلقي لقاح كورونا {%endblock%} 
+
+{% block css_files %}
+{% comment %} <link rel="stylesheet" href="{% static "news/post.css" %}"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{% static "news/index.css" %}"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="{% static "news/button.css" %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static "news/post.css" %}">
+<link rel="stylesheet" href="{% static "news/all-posts.css" %}">
+<link rel="stylesheet" href="{% static "news/register.css" %}">
+<link rel="stylesheet" href="{% static "news/entries.css" %}">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static "news/button.css" %}">
+
+
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet"></link>
+{% endblock %} 
+
+
+{%block content%}
+<section id="all-posts">
+    <h2>أسماء المتقدمين</h2>
+</section>
+<section class="entries">
+    {%for post in all_entries%}
+        
+        <h4>الاسم ثلاثي: {{post.personName}}</h4>
+        <ul>
+            <li>العمر: {{post.age}}</li>
+            <br />
+            <li>رقم الهاتف: {{post.phone}}</li>
+            <br />
+            <li>البريد الالكتروني: {{post.email}}</li>
+            <br />
+            {% if post.typeVaccine == "['سبوتنيك']" %}
+
+            <li>نوع اللقاح المطلوب: سبوتنيك</li>
+            {% elif post.typeVaccine == "['فايزر']" %}
+
+            <li>نوع اللقاح المطلوب: فايزر</li>
+            {% elif post.typeVaccine == "['سبوتنيك لايت']" %}
+
+            <li>نوع اللقاح المطلوب: سبوتنيك لايت</li>
+            {% else %}
+            <li>نوع اللقاح المطلوب: موديرنا</li>
+
+            {% endif %}
+            
+            <br />
+            {% if post.sickBefore == "['a']" %}
+                <li>هل أصبت سابقا بكورونا: نعم</li>
+            {% else %}
+                <li>هل أصبت سابقا بكورونا: لا</li>
+            {% endif %}
+            {% comment %} <li>هل أصبت سابقا بكورونا: {{post.sickBefore}}</li> {% endcomment %}
+            <br />
+            <li>ملاحظات أخرى: {{post.notes}}</li>
+        </ul>
+        <br />
+
+    {%endfor%}
+
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="{% static "news/register-form.js" %}"></script>
+{%endblock%}

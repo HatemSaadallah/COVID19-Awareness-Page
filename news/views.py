@@ -9,6 +9,10 @@ from .models import Person
 from .forms import createNewRegister, signIn
 
 from django.contrib.auth import authenticate, login, logout
+
+from django.contrib.auth.decorators import login_required
+import re
+
 # Create your views here.
 
 # class StartingPageView(ListView):
@@ -89,6 +93,8 @@ def Logout(response):
     logout(response)
     return redirect("/login")
 
+
+
 def registerCase(response):
     if response.method == "POST":
         form = createNewRegister(response.POST)
@@ -113,3 +119,17 @@ def registerCase(response):
     else:
         form = createNewRegister()
         return render(response, "news/register-form.html", {"form": form})
+
+@login_required(login_url="login")
+def Data(response):
+    # form = Person()
+    all_entries = Person.objects.all();
+    
+    pattern = re.compile("(?:^|\s)'([^']*?)'(?:$|\s)")
+    # sickBefore = pattern.match(all_entries.sickBefore)
+    # typeVaccine = pattern.match(all_entries.typeVaccine)
+    # print(sickBefore)
+    # print(typeVaccine)
+    # for entry in all_entries:
+    #     print(entry.sickBefore)
+    return render(response, "news/applicant.html", {"all_entries": all_entries})

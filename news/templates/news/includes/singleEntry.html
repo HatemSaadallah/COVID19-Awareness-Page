@@ -1,0 +1,11 @@
+<li>
+    <article class="post">
+        {% comment %} <a href="{% url 'news-detail-page' post.slug %}"> {% endcomment %}
+            <img style="border-radius: 0px" src="{{ post.image_name }}" alt={{post.title}}>
+                <div class="post__content"> 
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.excerpt}}</p>
+                </div>
+        {% comment %} </a> {% endcomment %}
+    </article> 
+</li>

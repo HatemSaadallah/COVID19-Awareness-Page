@@ -1,0 +1,18 @@
+.entries {
+    margin-right: 10em;
+}
+
+ul {
+    list-style-type: disc;
+    display: block;
+    margin-right: 4em;
+}
+
+li {
+    margin-bottom: -1em !important;
+    font-size: smaller;
+}
+
+h4 {
+    font-weight: bolder;
+}
